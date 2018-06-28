@@ -20,6 +20,10 @@ app.get(/^\/random\/(\d+)\/(\d+)/, (req, res) => {
   res.json({ result: random(parseInt(min), parseInt(max))});
 });
 
+app.get(/^\/random\//, (req, res) => {
+  res.json({ result: 'Incorrect input' });
+});
+
 app.listen(port, () => {
   console.log(`Application is running on port ${port} ...`);
 });
